@@ -1,9 +1,0 @@
-{% extends "base.html" %}{% block title %}Report a Problem{% endblock %}{% block content %}
-<div class="page-title"><span class="eyebrow">RESIDENT SERVICES</span><h1>Report an electricity problem</h1><p>Provide the details below to create a trackable service request.</p></div>
-<div class="panel form-panel"><form method="post">
-<div class="mb-3"><label class="form-label">Resident / consumer *</label><select class="form-select" name="resident_id" required><option value="">Select resident</option>{% for r in residents %}<option value="{{ r.id }}">{{ r.name }} · {{ r.consumer_number }} · {{ r.village_name }}</option>{% endfor %}</select><div class="form-text">Demo residents are preloaded in the database.</div></div>
-<div class="row g-3"><div class="col-md-6"><label class="form-label">Problem category *</label><select class="form-select" name="category" required><option value="">Select category</option><option>Power outage</option><option>Low voltage</option><option>Damaged electric pole</option><option>Transformer issue</option><option>Meter problem</option><option>New connection</option><option>Other</option></select></div>
-<div class="col-md-6"><label class="form-label">Priority</label><select class="form-select" name="priority"><option>Normal</option><option>High</option><option>Urgent</option></select></div></div>
-<div class="mt-3 mb-4"><label class="form-label">Problem description *</label><textarea class="form-control" name="description" rows="4" placeholder="Describe the location and problem..." required></textarea></div>
-<button class="btn btn-primary btn-lg">Submit complaint</button> <a class="btn btn-light btn-lg" href="{{ url_for('index') }}">Cancel</a>
-</form></div>{% endblock %}
