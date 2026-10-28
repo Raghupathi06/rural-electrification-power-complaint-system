@@ -5,7 +5,7 @@ from datetime import datetime
 from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = "change-this-secret-key-before-deployment"
+app.secret_key = os.environ.get("SECRET_KEY", "local-development-only")
 DB_PATH = Path(__file__).with_name("rural_power.db")
 
 def db():
