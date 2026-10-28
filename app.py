@@ -288,6 +288,7 @@ def update_connection(request_id):
 def health():
     return {"status": "ok", "application": "Rural Power Complaint System"}
 
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     app.run(debug=True)
