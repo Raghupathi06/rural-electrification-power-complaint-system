@@ -3,6 +3,7 @@ import sqlite3
 from pathlib import Path
 from datetime import datetime
 from functools import wraps
+import os
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "local-development-only")
